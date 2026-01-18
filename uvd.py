@@ -50,7 +50,7 @@ PROG_NAME = "UVD"
 
 
 def run_cmd(cmd) -> None:
-    print("Eseguo:", " ".join(shlex.quote(c) for c in cmd))
+    print("Exec:", " ".join(shlex.quote(c) for c in cmd))
     subprocess.run(cmd, check=True)
 
 
@@ -58,7 +58,7 @@ def mkdir(DIR: str) -> None:
     os.makedirs(DIR, exist_ok=True)
 
 
-"""Versione AV1: massima qualità (se disponibile)."""
+"""AV1 max quality."""
 def down_av1(url: str, dir: str) -> None:
     
     mkdir(dir)
@@ -68,7 +68,7 @@ def down_av1(url: str, dir: str) -> None:
         YT_DLP_BIN,
         "--yes-playlist",
         "-f", "bestvideo[vcodec*=av01]+bestaudio/bestvideo+bestaudio/best",
-        "--merge-output-format", "mkv",   # mkv è più sicuro per AV1
+        "--merge-output-format", "mkv",  
         "-o", out_tmpl,
         url,
     ]
@@ -76,7 +76,7 @@ def down_av1(url: str, dir: str) -> None:
     print("\n=== Downloading AV1 video file format (max quality if exists) ===")
     run_cmd(cmd)
 
-"""Versione VP9: ottima qualità, molto compatibile."""
+"""VP9"""
 def down_vp9(url: str, dir: str) -> None:
     
     mkdir(dir)
@@ -86,7 +86,7 @@ def down_vp9(url: str, dir: str) -> None:
         YT_DLP_BIN,
         "--yes-playlist",
         "-f", "bestvideo[vcodec*=vp9]+bestaudio/bestvideo+bestaudio/best",
-        "--merge-output-format", "mkv",   # mkv perfetto per VP9
+        "--merge-output-format", "mkv", 
         "-o", out_tmpl,
         url,
     ]
@@ -95,7 +95,7 @@ def down_vp9(url: str, dir: str) -> None:
     run_cmd(cmd)
 
 
-"""Versione H.264: massima compatibilità (MP4)."""
+"""H.264(MP4)."""
 def down_h264(url: str, dir: str) -> None:
     
     mkdir(dir)
@@ -104,7 +104,7 @@ def down_h264(url: str, dir: str) -> None:
 
     cmd = [
         YT_DLP_BIN,
-        # prima prova H.264 in mp4, poi qualunque mp4, poi best
+        
         "--yes-playlist",
         "-f", "bestvideo[vcodec^=avc1]+bestaudio[ext=m4a]/best[ext=mp4]/best",
         "--merge-output-format", "mp4",
@@ -141,10 +141,10 @@ def down_mp3(url: str, dir: str):
     cmd = [
         YT_DLP_BIN,
         "--yes-playlist",
-        "-f", "bestaudio",              # prende il miglior audio disponibile
-        "--extract-audio",              # estrai audio dal video
-        "--audio-format", "mp3",        # converte in mp3
-        "--audio-quality", "0",         # qualità massima (0 = best)
+        "-f", "bestaudio",              
+        "--extract-audio",            
+        "--audio-format", "mp3",      
+        "--audio-quality", "0",       
         "-o", out_tmpl,
         url,
     ]
@@ -161,10 +161,10 @@ def down_flac(url: str, dir: str):
     cmd = [
         YT_DLP_BIN,
         "--yes-playlist",
-        "-f", "bestaudio",            # scarica solo il miglior audio
-        "--extract-audio",            # estrai audio dal video
-        "--audio-format", "flac",     # converte in FLAC
-        "--audio-quality", "0",       # qualità massima
+        "-f", "bestaudio",            
+        "--extract-audio",            
+        "--audio-format", "flac",   
+        "--audio-quality", "0",      
         "-o", out_tmpl,
         url,
     ]
@@ -206,12 +206,7 @@ def down_quality(url: str, dir: str, quality: str):
 
 
 def down_subtitles(url: str, dir: str, lang: str = "en,it"):
-    """
-    Scarica i sottotitoli di un video YouTube.
 
-    lang: codice lingua (es. "it", "en", "en-US")
-    auto: True = sottotitoli automatici, False = solo manuali
-    """
     mkdir(dir)
 
     cmd = [
@@ -229,9 +224,6 @@ def down_subtitles(url: str, dir: str, lang: str = "en,it"):
         cmd.append("--all-subs")
     else:
         cmd.extend(["--sub-langs", lang])
-
-    #if auto:
-    #    cmd.insert(3, "--write-auto-sub")
 
     print(f"\n=== Downloading subtitles ({lang}) ===")
     run_cmd(cmd)
@@ -285,8 +277,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     
-    #if video_url.startswith("http"):
-
     error = 0
 
     # Format Check
@@ -319,13 +309,13 @@ if __name__ == "__main__":
             except subprocess.CalledProcessError as e:
                 print("\n[" + PROG_NAME + "] Opus not avaiable or an error occured while attempting to download the audio file:", e)
 
-        case "-mp3":
+        case "-mp3":    # MP3
             try:
                 down_mp3(video_url, directory)
             except subprocess.CalledProcessError as e:
                 print("\n[" + PROG_NAME + "] MP3 not avaiable or an error occured while attempting to download the audio file:", e)
 
-        case "-flac":
+        case "-flac":   # FLAC
             try:
                 down_flac(video_url, directory)
             except subprocess.CalledProcessError as e:
@@ -343,25 +333,11 @@ if __name__ == "__main__":
 
     if len(sys.argv) > 5:
         subs = sys.argv[5]
-        #auto_arg = sys.argv[6].lower()
-
-        #if auto_arg == "y":
-        #    auto = True
-        #elif auto_arg == "n":
-        #    auto = False
-        # else:
-        #     print(
-        #      "[" + PROG_NAME + "] Error: bad auto-subs flag.\n"
-        #      "[" + PROG_NAME + "] Use 'y' or 'n'.\n"
-        #      "[" + PROG_NAME + "] Type py yt2dsk.py --help for help."
-        #     )
-        #     sys.exit(4)
 
         try:
             down_subtitles(video_url, directory, subs)
         except subprocess.CalledProcessError as e:
             print("\n[" + PROG_NAME + "] Subtitles are not available or an error occurred while downloading:",e)
-
 
     if(error == 0): 
         print("\n[" + PROG_NAME + "] Done. Check your folder:", os.path.abspath(directory))
