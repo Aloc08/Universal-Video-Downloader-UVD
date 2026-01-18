@@ -22,14 +22,13 @@
  *  CREDITS:
  *  Alessio Occulto
  *  Filippo Occulto
- *  2026. All rights reserved.
+ *  2026. Licensed under Mit License.
  *  ______________________________________
  *  Contacts: 
  *    -E-Mail: alessio.occulto.dev@gmail.com
  *
  * ----------------------------------------------------------------------------
  *  NOTES:
- *  - Applies to: https://www.youtube.com/watch*
  *  - Tested on: Windows and Linux
  *  - Any modification to the code could render the program unoperable 
  *
@@ -341,4 +340,5 @@ if __name__ == "__main__":
 
     if(error == 0): 
         print("\n[" + PROG_NAME + "] Done. Check your folder:", os.path.abspath(directory))
+
 
