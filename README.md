@@ -53,7 +53,7 @@ No subscriptions or accounts are needed.
 With this version, no additional downloads are required besides the executable itself.
 
 ⚠️ It is recommended to add the program to your system **PATH**. 
-This allows you to run it from any command prompt using uvd instead of `.\uvd`.
+This allows you to run it from any command prompt using `uvd` instead of `.\uvd`.
 If you need help with this procedure, please refer to '`how_to_path.md`'.
 
 
