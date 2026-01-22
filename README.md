@@ -72,7 +72,7 @@ py uvd.py <args>
 
 ---
 
-## 🚀 Usage Examples
+## 🚀 Usage
 
 ### 📃 General syntax
 
