@@ -9,8 +9,6 @@
 Everything runs **locally on your machine**, so **no external servers** are used.
 No subscriptions or accounts are needed.
 
-This README will be updated soon
-
 ---
 
 ## Features
@@ -48,40 +46,54 @@ This README will be updated soon
 
 ---
 
-## 📦 Requirements
+## How to use
 
+### 💽 Executable version
+
+With this version, no additional downloads are required besides the executable itself.
+
+⚠️ It is recommended to add the program to your system **PATH**. 
+This allows you to run it from any command prompt using uvd instead of `.\uvd`.
+If you need help with this procedure, please refer to '`how_to_path.md`'.
+
+
+### 📦 Bundle Version
+
+With this version it's needed:
 - **Python 3.10 or newer**
 
 > ⚠️ `yt-dlp` and `ffmpeg` are bundled in the releases to simplify setup for end users.  
 > ❌ No other installations are needed. For expert users you can download them manually and add them to `path`.
 
+To use the program with python, you need to do so: 
+```bash
+py uvd.py <args>
+```
+
 ---
 
 ## 🚀 Usage Examples
 
-### General syntax
+### 📃 General syntax
 
 ```bash
-py uvd.py <URL> <FORMAT_OR_QUALITY> <OUTPUT_DIRECTORY> [SUBTITLES OPTIONS]
-```
-### Examples
-
-```bash
-py uvd.py "<URL>" -av1 ./videos
-py uvd.py "<URL>" -vp9 ./videos -subs en
-py uvd.py "<URL>" -na -none -subs all
-py uvd.py "<URL>" -flac ./audio
+UVD [-h] [-f {av1,vp9,mp4,opus,mp3,flac}] [-q {360p,480p,720p,1080p,1440p,4k,8k}] [-dir DIRECTORY] [-s [SUBS]]
+    [-v]
+    url
 ```
 
----
+### 🆘 Help & Info
 
-## 🆘 Help & Info
+positional arguments:
+  url                   Multimedia URL to download
 
-```bash
-py uvd.py --help
-py uvd.py --version
-py uvd.py --lang-codes
-```
+options:
+  -h, --help                                        show this help message and exit
+  -f, --format {av1,vp9,mp4,opus,mp3,flac}          Format to download [av1, vp9, mp4, opus, mp3, flac | default: none]
+  -q, --quality {360p,480p,720p,1080p,1440p,4k,8k}  Quality to download [360p, 480p, 720p, 1080p, 1440p, 4k, 8k | default: best]
+  -dir, --directory DIRECTORY                       Directory where the file will be saved (default: pc videos dir)
+  -s, --subs [SUBS]                                 Subtitles languages to download (comma separated, e.g. en,it,en-US or 'all')
+  -v, --version                                     Show program's version
 
 ---
 
