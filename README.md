@@ -83,7 +83,7 @@ UVD [-h] [-f {av1,vp9,mp4,opus,mp3,flac}] [-q {360p,480p,720p,1080p,1440p,4k,8k}
 ```
 
 ### 🆘 Help & Info
-
+```bash
 positional arguments:
   url                   Multimedia URL to download
 
@@ -94,7 +94,7 @@ options:
   -dir, --directory DIRECTORY                       Directory where the file will be saved (default: pc videos dir)
   -s, --subs [SUBS]                                 Subtitles languages to download (comma separated, e.g. en,it,en-US or 'all')
   -v, --version                                     Show program's version
-
+```
 ---
 
 ## 💫 Why UVD?
