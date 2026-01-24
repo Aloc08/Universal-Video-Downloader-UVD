@@ -6,8 +6,8 @@
  *  Universal Video Downloader (UVD)                                                
  *  Download Videos in High Quality                                 
  *                                                                  
- *  Version:         6.0.0                                                    
- *  Data:            2026/01/20                                               
+ *  Version:         6.1.0                                                    
+ *  Data:            2026/01/24                                               
  *  Author:          Alessio Occulto (Aloc08)                                         
  *  
  * ----------------------------------------------------------------------------
@@ -59,3 +59,4 @@ class ErrorCodes(IntEnum):
 
 
   
+
