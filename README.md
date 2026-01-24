@@ -67,7 +67,7 @@ With this version it's needed:
 
 To use the program with python, you need to do so: 
 ```bash
-py uvd.py <args>
+py main_uvd.py <args>
 ```
 
 ---
