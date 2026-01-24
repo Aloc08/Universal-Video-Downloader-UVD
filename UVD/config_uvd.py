@@ -44,6 +44,7 @@
 
 import sys
 import os
+import platform
 from error_codes_uvd import ErrorCodes
 
 def resource_path(relative_path: str) -> str:
@@ -86,6 +87,7 @@ COMMON_ARGS = [
 VIDEO_FORMATS = ["av1", "vp9", "mp4"]
 AUDIO_FORMATS = ["opus", "mp3", "flac"]
 QUALITIES = ["360p", "480p", "720p", "1080p", "1440p", "4k", "8k", "best"]
+
 
 
 
