@@ -6,8 +6,8 @@
  *  Universal Video Downloader (UVD)                                                
  *  Download Videos in High Quality                                 
  *                                                                  
- *  Version:         6.0.0                                                    
- *  Data:            2026/01/20                                               
+ *  Version:         6.1.0                                                    
+ *  Data:            2026/01/24                                               
  *  Author:          Alessio Occulto (Aloc08)                                         
  *  
  * ----------------------------------------------------------------------------
@@ -86,6 +86,7 @@ COMMON_ARGS = [
 VIDEO_FORMATS = ["av1", "vp9", "mp4"]
 AUDIO_FORMATS = ["opus", "mp3", "flac"]
 QUALITIES = ["360p", "480p", "720p", "1080p", "1440p", "4k", "8k", "best"]
+
 
 
 
