@@ -44,17 +44,32 @@
 
 import sys
 import os
+from error_codes_uvd import ErrorCodes
 
 def resource_path(relative_path: str) -> str:
     if hasattr(sys, "_MEIPASS"):
         return os.path.join(sys._MEIPASS, relative_path)
     return os.path.join(os.path.abspath("."), relative_path)
 
-YT_DLP_BIN   = resource_path("bin/yt-dlp.exe")
-FFMPEG_BIN  = resource_path("bin/ffmpeg.exe")
-FFPROBE_BIN = resource_path("bin/ffprobe.exe")
-FFPLAY_BIN  = resource_path("bin/ffplay.exe")
+SYSTEM = platform.system().lower()
 
+if SYSTEM == "windows":
+    BIN_DIR = "bin/windows"
+    EXT = ".exe"
+elif SYSTEM == "linux":
+    BIN_DIR = "bin/linux"
+    EXT = ""
+elif SYSTEM == "darwin":
+    BIN_DIR = "bin/mac"
+    EXT = ""
+else:
+    raise RuntimeError(f"[{PROG_NAME}] Error {ErrorCodes.INVALID_OS}: O.S. not supported: {SYSTEM}")
+
+
+YT_DLP_BIN   = resource_path(f"{BIN_DIR}/yt-dlp{EXT}")
+FFMPEG_BIN  = resource_path(f"{BIN_DIR}/ffmpeg{EXT}")
+FFPROBE_BIN = resource_path(f"{BIN_DIR}/ffprobe{EXT}")
+FFPLAY_BIN  = resource_path(f"{BIN_DIR}/ffplay{EXT}")
 
 PROG_NAME = "UVD"
 PROG_VER = "6.0.0"
