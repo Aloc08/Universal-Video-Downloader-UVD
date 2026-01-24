@@ -40,26 +40,13 @@
  *
  *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-'''
-class ErrorCodes:
-    # Generic
-    ERR_UNKNOWN = "1000"
-
-    # Arguments
-    MISSING_ARGUMENTS = "1001"
-    URL_NOT_VALID = "1002"
-
-    # Media
-    MEDIA_NOT_AVAIABLE = "1003"
-    FORMAT_NOT_VALID = "1004"
-    QUALITY_NOT_VALID = "1005" '''
-
 
 from enum import IntEnum
 
 class ErrorCodes(IntEnum):
     # Generic
     ERR_UNKNOWN = 9001
+    INVALID_OS = 9002
 
     # Arguments
     MISSING_ARGUMENTS = 1001
@@ -69,5 +56,6 @@ class ErrorCodes(IntEnum):
     MEDIA_NOT_AVAILABLE = 2001
     FORMAT_NOT_VALID = 2002
     QUALITY_NOT_VALID = 2003
+
 
   
