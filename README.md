@@ -11,6 +11,10 @@ No subscriptions or accounts are needed.
 
 ---
 
+![UVD logo](https://github.com/Aloc08/Universal-Video-Downloader-UVD/blob/ceb403d302d9dffce8f083e171834f9e2425d9cb/Logo/UVD_logo.png "UVD Logo")
+
+---
+
 ## Features
 
 ### What UVD adds
