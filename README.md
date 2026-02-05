@@ -2,16 +2,21 @@
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)](#)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](#)
 [![License](https://img.shields.io/badge/license-MIT-green)](#)
+<p align="left">
+  <img src=https://github.com/Aloc08/Universal-Video-Downloader-UVD/blob/ceb403d302d9dffce8f083e171834f9e2425d9cb/Logo/UVD_logo.png width=150)>
+  <img src="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/.github/banner.svg" width="130">
+  <img src="https://github.com/Aloc08/Universal-Video-Downloader-UVD/blob/31935bbf13331e543def6c6b5a9f42b4ac65058d/Logo/ffmpeg_logo.svg" width="40">
+  <img src="https://github.com/Aloc08/Universal-Video-Downloader-UVD/blob/31935bbf13331e543def6c6b5a9f42b4ac65058d/Logo/Deno_Logo.svg" width="80">
+</p>
+
+
+---
 
 # Universal-Video-Downloader
 
 **UVD** is a lightweight and powerful command-line multimedia downloader built on top of **yt-dlp**, designed to download videos, audio tracks, subtitles, and playlists from **all websites supported by yt-dlp**.
 Everything runs **locally on your machine**, so **no external servers** are used.
 No subscriptions or accounts are needed.
-
----
-
-![UVD logo](https://github.com/Aloc08/Universal-Video-Downloader-UVD/blob/ceb403d302d9dffce8f083e171834f9e2425d9cb/Logo/UVD_logo.png "UVD Logo")
 
 ---
 
@@ -117,7 +122,7 @@ positional arguments:
 
 options:
   -h, --help                                        show this help message and exit
-  -f, --format {av1,vp9,mp4,opus,mp3,flac}          Format to download [av1, vp9, mp4, opus, mp3, flac | default: none]
+  -f, --format {av1,vp9,mp4,opus,mp3,flac}          Format to download [av1, vp9, mp4, opus, mp3, flac | default: none  | i for info]
   -q, --quality {360p,480p,720p,1080p,1440p,4k,8k}  Quality to download [360p, 480p, 720p, 1080p, 1440p, 4k, 8k | default: best]
   -dir, --directory DIRECTORY                       Directory where the file will be saved (default: pc videos dir)
   -s, --subs [SUBS]                                 Subtitles languages to download (comma separated, e.g. en,it,en-US or 'all')
@@ -147,7 +152,7 @@ UVD focuses on simplicity, transparency and local execution:
 
 ## ⚠️ Notes
 
- - UVD does not bypass DRM.
+ - **UVD does not bypass *DRM***.
  - Available formats and qualities depend on the source website.
 
 ---
@@ -165,9 +170,9 @@ This software is provided for **educational and personal use only**.
 Users are responsible for complying with the terms of service and copyright laws of the websites they download content from.
 **The author assumes no liability for misuse**.
 
-UVD makes use of third-party software, including **yt-dlp** and **FFmpeg**, which are subject to their respective licenses and trademarks rights.
+UVD makes use of third-party software, including **yt-dlp**, **FFmpeg** and **Deno**, which are subject to their respective licenses and trademarks rights.
 
-All product names, trademarks, and registered trademarks are property of their respective owners and are used for identification purposes only.
+All product names, logos, trademarks, and registered trademarks are property of their respective owners and are used for identification purposes only.
 
 **This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected to any other software or platform**.  
 
