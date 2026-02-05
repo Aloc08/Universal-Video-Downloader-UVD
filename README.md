@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/6.0.0-155875)
+![Version](https://img.shields.io/badge/7.0.0-155875)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)](#)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](#)
 [![License](https://img.shields.io/badge/license-MIT-green)](#)
