@@ -52,16 +52,17 @@ No subscriptions or accounts are needed.
 
 ## How to use
 
-### 💽 Executable version
+### 💽 Executable version - Windows
 
 With this version, no additional downloads are required besides the executable itself.
 
-⚠️ It is recommended to add the program to your system **PATH**. 
-This allows you to run it from any command prompt using `uvd` instead of `.\uvd`.
+➡️ It is recommended to add the program to your system **PATH**. 
+This allows you to run it from any command prompt.
 If you need help with this procedure, please refer to '`how_to_path.md`'.
 
+---
 
-### 📦 Bundle Version
+### 📦 Bundled Version - Linux & macOS
 
 With this version it's needed:
 - **Python 3.10 or newer**
@@ -73,6 +74,29 @@ To use the program with python, you need to do so:
 ```bash
 py main_uvd.py <args>
 ```
+
+---
+
+### 🛠️ Building your own executable from source (For expert users only)
+
+0 - Advanced users can build their own **executable** starting from the source code using **PyInstaller**.
+    To do this, you must download the `Bundled Version` release, as it already contains all **required** **dependencies** (such as yt-dlp, ffmpeg and deno) included in the project structure.
+
+1 - First make sure you have **Python 3.10** or newer installed.
+
+2 - **Download** and extract the `Bundled Version` of the release.
+
+3 - Install PyInstaller:
+```
+pip install pyinstaller
+```
+
+4 - From the project root directory, run:
+```
+pyinstaller --onefile --add-data ".\bin\:.\bin" .\main_uvd.py
+```
+
+5 - Done! Once the build process is complete, the executable will be available in the `dist/` folder.
 
 ---
 
