@@ -87,7 +87,7 @@ Supported subtitle features:
 
 Example:
 ```bash
-py uvd.py <URL> -mp4 ./videos -subs all
+uvd <URL> -f mp4 ./videos -subs all
 ```
 
 ---
@@ -141,10 +141,10 @@ Simply open an **issue** on GitHub.
 
 Files are saved in the output directory you specify.
 
-If no directory is provided, UVD uses the default directory:
+If no directory is provided, UVD uses the default directory you can found in your videos system folder:
 
 ```text
-../downloaded_videos
+/UVD_downloads
 ```
 
 ---
